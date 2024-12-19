@@ -1,0 +1,24 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<h1>Welcome to the Admin Dashboard</h1>
+
+<!-- Existing dashboard content -->
+{{ block.super }}
+
+<!-- Disk Space Information -->
+<div style="margin-top: 20px; border: 1px solid #ccc; padding: 10px; background: #f9f9f9;">
+    <h3>Disk Space Usage:</h3>
+    <ul>
+        <li><strong>Total:</strong> {{ disk_info.total }}</li>
+        <li><strong>Used:</strong> {{ disk_info.used }}</li>
+        <li><strong>Free:</strong> {{ disk_info.free }}</li>
+    </ul>
+
+    {% if disk_info.error %}
+        <p style="color: red;">Error: {{ disk_info.error }}</p>
+    {% else %}
+        <p style="color: red;">blah: {{ disk_info }}</p>
+    {% endif %}
+</div>
+{% endblock %}

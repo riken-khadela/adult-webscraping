@@ -98,6 +98,7 @@ class Bot(StartDriver):
         for link in video_links: 
             video_url = link['href']
             
+            
             img_tag = link.find('img', alt='', src=True)
             if not img_tag or not video_url : continue
             
